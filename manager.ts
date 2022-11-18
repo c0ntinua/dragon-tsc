@@ -12,6 +12,7 @@ function plotLegalMoves() {
         case 3 : updateLegalHead();break;
         case 4 : updateLegalTunnel();break;
         case 5 : updateLegalThetan();break;
+        case 6 : updateLegalKnight();break;
         default: updateLegalEmpty();break;
     }
     

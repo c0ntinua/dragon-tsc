@@ -74,6 +74,17 @@ function plotWorld() {
                         pen.fill();
                         pen.font = "50px Courier New";
                         break;
+                    case 6:
+                        pen.font = "40px Times New Roman";
+                        pen.beginPath();
+                        //pen.fillText(String.fromCharCode(8859);
+                        //pen.fillText(String.fromCharCode(8984),
+                        pen.fillText(String.fromCharCode(915),  
+                        col*pixel_width + 8 , row*pixel_height + 39);
+    
+                        pen.fill();
+                        pen.font = "50px Courier New";
+                        break;
 
                     default: break;  
                 }

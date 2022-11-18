@@ -29,6 +29,10 @@ function movePiece(from_col : number, from_row : number , to_col : number, to_ro
             world.set(to_col, to_row, 5);
             world.set(from_col, from_row, 0);
             player.set(from_col, from_row, 0);
+        case 6:
+            world.set(to_col, to_row, 6);
+            world.set(from_col, from_row, 0);
+            player.set(from_col, from_row, 0);
         default:
             break;
     }

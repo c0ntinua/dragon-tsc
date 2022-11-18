@@ -22,5 +22,6 @@
       "tunnel.ts",
       "move.ts",
       "thetan.ts",
+      "knight.ts",
     ]
   }

@@ -22,6 +22,9 @@ function plotLegalMoves() {
         case 5:
             updateLegalThetan();
             break;
+        case 6:
+            updateLegalKnight();
+            break;
         default:
             updateLegalEmpty();
             break;
