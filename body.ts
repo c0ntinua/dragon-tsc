@@ -11,4 +11,5 @@ function updateLegalBody() {
             }         
         }
     }
+    if (!clusterContainsHeadAndBody()) legal.cell = Array(global_rows*global_cols).fill(0);
 }

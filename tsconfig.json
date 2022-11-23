@@ -23,5 +23,6 @@
       "move.ts",
       "thetan.ts",
       "knight.ts",
+      "chess.ts",
     ]
   }

@@ -1,8 +1,7 @@
 function movePiece(from_col : number, from_row : number , to_col : number, to_row : number ) {
-    player.set(to_col, to_row, current_player);
+    
     let this_piece_type = world.get(from_col, from_row);
-    current_player = other_player(current_player);
-    console.log("current player " + current_player);
+    
     switch (this_piece_type) {
         case 0:
             break;
@@ -14,6 +13,7 @@ function movePiece(from_col : number, from_row : number , to_col : number, to_ro
         case 2:
             world.set(to_col, to_row, 2);
             world.set(from_col, from_row, 1);
+            player.set(from_col, from_row, current_player);
             break;
         case 3:
             world.set(to_col, to_row, 3);
@@ -29,14 +29,19 @@ function movePiece(from_col : number, from_row : number , to_col : number, to_ro
             world.set(to_col, to_row, 5);
             world.set(from_col, from_row, 0);
             player.set(from_col, from_row, 0);
+            break;
         case 6:
             world.set(to_col, to_row, 6);
             world.set(from_col, from_row, 0);
             player.set(from_col, from_row, 0);
+            break;
         default:
             break;
     }
+    player.set(to_col, to_row, current_player);
+    current_player = other_player(current_player);
 }
+
 function other_player(player : number) {
     if (player == -1) return 1;
     if (player ==  1) return -1;

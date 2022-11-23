@@ -1,0 +1,7 @@
+/* canvas {
+    font-family: 'Noto Sans', sans-serif;
+} */
+@font-face {
+    font-family: 'Note Sans Light';
+    src: 'NotoSans-Light.ttf';
+}

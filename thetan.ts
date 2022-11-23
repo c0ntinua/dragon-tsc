@@ -9,7 +9,6 @@ function updateLegalThetan() {
         for (let col = 0 ; col < global_cols ; col++) {
             if (one_step_legal.get(col,row) == 1) legal.set(col,row,1);
             if (two_step_legal.get(col,row) == 1) legal.set(col,row,1);
-
         }
     }
 
@@ -87,6 +86,8 @@ function thetanAccessible(piece_code : number, owning_player : number) : boolean
             return false;
         case 5 :
             return true;
+        case 6 : 
+            return true; 
         default:
             return false;
     }

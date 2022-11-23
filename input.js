@@ -26,6 +26,5 @@ function getMousePosition(canvas, event) {
         target_row = new_target_row;
         selected_mode = true;
     }
-    console.log("target_col : " + target_col, "target_row : " + target_row, "\n", "new_target_col : " + new_target_col, "new_target_row : " + new_target_row, "selected_mode : " + selected_mode);
 }
 //# sourceMappingURL=input.js.map

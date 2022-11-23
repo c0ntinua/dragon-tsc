@@ -83,6 +83,8 @@ function thetanAccessible(piece_code, owning_player) {
             return false;
         case 5:
             return true;
+        case 6:
+            return true;
         default:
             return false;
     }

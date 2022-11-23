@@ -17,25 +17,19 @@ function plotLegalMoves() {
     }
     
     pen.clearRect(0, 0, 1000, 1000);
-    if (selected_mode ) {
-        plotLegal();  
-        plotSelected();
-    }
+
     plotGrid();
-    plotWorld();    
-}
-
-
-
-function tryRandomMove() {
+    plotGridChess();
+    if (selected_mode ) {
+        plotLegalChess();
+        //plotLegal();  
+        plotSelected();
+    }  
     
+    //plotWorld();
+    plotWorldChess(); 
 
-    dest_col = Math.floor(Math.random() * global_rows);
-    dest_row = Math.floor(Math.random() * global_cols);
-    if (legal.get(dest_col,dest_row) == 1 ) {
-        movePiece(target_col, target_row, dest_col,dest_row);
-    }
-    target_col = Math.floor(Math.random() * global_rows);
-    target_row = Math.floor(Math.random() * global_cols);
 }
+
+
 

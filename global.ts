@@ -1,9 +1,10 @@
 let canvas = document.getElementById("canvas") as HTMLCanvasElement;
 let pen = canvas.getContext("2d");
+
 let density = 0.5;
 
-let global_rows : number = 21;
-let global_cols : number = 21;
+let global_rows : number = 8;
+let global_cols : number = 8;
 
 let target_col : number = 0;
 let target_row : number = 0;
@@ -36,3 +37,6 @@ let selected_mode : boolean = false;
 let destination_mode : boolean = false;
 let old_target_col : number = 0;
 let old_target_row : number  = 0;
+let glyph_row_shift = 46;
+let glyph_col_shift = 5;
+let font_description = "60px Noto Sans Light";

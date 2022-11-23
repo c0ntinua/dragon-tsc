@@ -30,20 +30,12 @@ function plotLegalMoves() {
             break;
     }
     pen.clearRect(0, 0, 1000, 1000);
+    plotGrid();
+    plotGridChess();
     if (selected_mode) {
-        plotLegal();
+        plotLegalChess();
         plotSelected();
     }
-    plotGrid();
-    plotWorld();
-}
-function tryRandomMove() {
-    dest_col = Math.floor(Math.random() * global_rows);
-    dest_row = Math.floor(Math.random() * global_cols);
-    if (legal.get(dest_col, dest_row) == 1) {
-        movePiece(target_col, target_row, dest_col, dest_row);
-    }
-    target_col = Math.floor(Math.random() * global_rows);
-    target_row = Math.floor(Math.random() * global_cols);
+    plotWorldChess();
 }
 //# sourceMappingURL=manager.js.map

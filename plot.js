@@ -9,6 +9,35 @@ function plotGrid() {
         }
     }
 }
+function plotGridChess() {
+    let grid_player = -1;
+    let counter = 0;
+    for (let row = 0; row < global_rows; row++) {
+        switch (grid_player) {
+            case -1:
+                counter = 1;
+                break;
+            case 1:
+                counter = 0;
+                break;
+        }
+        for (let col = 0; col < global_cols; col++) {
+            switch (counter % 2) {
+                case 0:
+                    pen.fillStyle = "#D2B48C";
+                    break;
+                case 1:
+                    pen.fillStyle = "#E5D3B3";
+                    break;
+            }
+            pen.beginPath();
+            pen.rect(col * pixel_width, row * pixel_height, pixel_width, pixel_height);
+            pen.fill();
+            counter++;
+        }
+        grid_player = other_player(grid_player);
+    }
+}
 function plotWorld() {
     let this_code = 0;
     pen.font = "50px Courier New";
@@ -92,6 +121,26 @@ function plotCluster() {
         }
     }
 }
+function plotWorldChess() {
+    let this_code = 0;
+    let this_glyph = 0;
+    let this_player = -1;
+    pen.strokeStyle = "#000000";
+    pen.fillStyle = "#000000";
+    pen.font = font_description;
+    for (let row = 0; row < global_rows; row++) {
+        for (let col = 0; col < global_cols; col++) {
+            this_code = world.get(col, row);
+            this_player = player.get(col, row);
+            if (this_code > 0) {
+                this_glyph = chessSymbol(this_player, this_code);
+                pen.beginPath();
+                pen.fillText(String.fromCharCode(this_glyph), col * pixel_width + glyph_col_shift, row * pixel_height + glyph_row_shift);
+                pen.fill();
+            }
+        }
+    }
+}
 function plotClusterAdjacent() {
     for (let row = 0; row < global_rows; row++) {
         for (let col = 0; col < global_cols; col++) {
@@ -124,6 +173,19 @@ function plotLegal() {
                 pen.beginPath();
                 pen.rect(col * pixel_width, row * pixel_height, pixel_width, pixel_height);
                 pen.fill();
+            }
+        }
+    }
+}
+function plotLegalChess() {
+    for (let row = 0; row < global_rows; row++) {
+        for (let col = 0; col < global_cols; col++) {
+            pen.strokeStyle = "#00FF00";
+            pen.lineWidth = 3;
+            if (legal.get(col, row) == 1) {
+                pen.beginPath();
+                pen.rect(col * pixel_width, row * pixel_height, pixel_width, pixel_height);
+                pen.stroke();
             }
         }
     }

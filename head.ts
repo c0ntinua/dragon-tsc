@@ -10,6 +10,7 @@ function updateLegalHead() {
                 if (world.get(col,row) == 0 ) legal.set(col, row, 1);
                 if (world.get(col,row) == 1 && player.get(col,row) != current_player ) legal.set(col, row, 1);
                 if (world.get(col,row) == 5 && player.get(col,row) != current_player ) legal.set(col, row, 1);
+                if (world.get(col,row) == 6 && player.get(col,row) != current_player ) legal.set(col, row, 1);
             }    
         }
     }
