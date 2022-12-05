@@ -1,5 +1,4 @@
 function movePiece(from_col : number, from_row : number , to_col : number, to_row : number ) {
-    
     let this_piece_type = world.get(from_col, from_row);
     
     switch (this_piece_type) {

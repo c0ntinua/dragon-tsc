@@ -8,7 +8,7 @@ function updateLegalKnight() {
     let this_row : number = 0;
     
     for (let s = 0 ; s < 8; s++) {
-        this_col =target_col + col_mod[s];
+        this_col = target_col + col_mod[s];
         this_row = target_row+row_mod[s];
         space_code = world.get(this_col,this_row);
         space_player = player.get(this_col,this_row);
