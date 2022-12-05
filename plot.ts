@@ -32,6 +32,16 @@ function plotGridChess() {
         grid_player = other_player(grid_player);
     }
 }
+function plotGridChessSet() {
+    let painted_squares = paintedSquares();
+    for (let s of painted_squares) {
+        pen.fillStyle = s.string;
+        pen.beginPath();
+        //pen.rect(Math.floor(s.col*pixel_width), Math.floor(s.row*pixel_height), Math.floor(pixel_width), Math.floor(pixel_height));
+        pen.rect(s.col*pixel_width, s.row*pixel_height, pixel_width, pixel_height);
+        pen.fill();
+    }
+}
 
 function plotWorld() {
     let this_code = 0;

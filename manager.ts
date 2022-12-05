@@ -19,7 +19,7 @@ function plotLegalMoves() {
     pen.clearRect(0, 0, 1000, 1000);
 
     plotGrid();
-    plotGridChess();
+    plotGridChessSet();
     if (selected_mode ) {
         plotLegalChess();
         //plotLegal();  

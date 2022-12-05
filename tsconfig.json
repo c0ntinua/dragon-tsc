@@ -1,0 +1,30 @@
+{
+    "compilerOptions": {
+      "module": "commonjs",
+      "noImplicitAny": true,
+      "removeComments": true,
+      "preserveConstEnums": true,
+      "sourceMap": true,
+      "target": "es6",
+      "outDir": "public"
+    },
+    "files": [
+      "armor.ts",
+      "body.ts",
+      "cluster.ts",
+      "dragon.ts",
+      "global.ts",
+      "head.ts",
+      "input.ts",
+      "main.ts",
+      "manager.ts",
+      "player.ts",
+      "plot.ts",
+      "tunnel.ts",
+      "move.ts",
+      "thetan.ts",
+      "knight.ts",
+      "chess.ts",
+      "square.ts",
+    ]
+  }
