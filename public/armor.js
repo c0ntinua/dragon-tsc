@@ -5,8 +5,5 @@ function updateLegalArmor() {
         if (myPiece(s) && pieceAt(s) == "body")
             legal_set.add(s);
     }
-    if (!containsHead(legal_set) || !containsBody(legal_set)) {
-        legal_set = noSquaresYet();
-    }
 }
 //# sourceMappingURL=armor.js.map

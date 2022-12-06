@@ -1,10 +1,9 @@
 function plotEmptyBoard() {
     pen.clearRect(0, 0, 1000, 1000);
-    let painted_squares = paintedSquares();
-    for (let s of painted_squares) {
-        pen.fillStyle = s.string;
+    for (let s of all_squares) {
+        pen.fillStyle = board_color[row(s)][col(s)];
         pen.beginPath();
-        pen.rect(s.row * pixel_width, s.col * pixel_height, pixel_width, pixel_height);
+        pen.rect(row(s) * pixel_width, col(s) * pixel_height, pixel_width, pixel_height);
         pen.fill();
     }
 }
@@ -14,33 +13,46 @@ function plotPieces() {
     for (let s of all_squares) {
         if (nonEmpty(s)) {
             pen.beginPath();
-            pen.fillText(String.fromCharCode(chessSymbol(playerAt(s), board[s.row][s.col])), s.col * pixel_width + glyph_col_shift, s.row * pixel_height + glyph_row_shift);
+            pen.fillText(String.fromCharCode(chessSymbol(playerAt(s), board[row(s)][col(s)])), col(s) * pixel_width + glyph_col_shift, row(s) * pixel_height + glyph_row_shift);
             pen.fill();
         }
     }
 }
 function plotLegalSet() {
-    pen.strokeStyle = "#00FF00";
+    pen.strokeStyle = "#FF0000";
+    pen.lineWidth = 1;
     for (let s of legal_set) {
         pen.beginPath();
-        pen.rect(s.col * pixel_width, s.row * pixel_height, pixel_width, pixel_height);
-        pen.fill();
+        pen.arc((col(s) + 0.5) * pixel_width, (row(s) + 0.5) * pixel_height, pixel_width / 2 - 1, 0, 2 * Math.PI, true);
+        pen.stroke();
     }
 }
 function plotConnectedSet() {
-    pen.strokeStyle = "#00FF00";
+    pen.strokeStyle = "#FF0000";
     pen.lineWidth = 3;
     for (let s of connected_set) {
         pen.beginPath();
-        pen.rect(s.col * pixel_width, s.row * pixel_height, pixel_width, pixel_height);
-        pen.fill();
+        pen.rect(col(s) * pixel_width, row(s) * pixel_height, pixel_width, pixel_height);
+        pen.stroke();
     }
 }
 function plotTargetSquare() {
     pen.strokeStyle = "#00FF00";
     pen.lineWidth = 3;
     pen.beginPath();
-    pen.rect(target_square.col * pixel_width, target_square.row * pixel_height, pixel_width, pixel_height);
+    pen.arc((col(target_square) + 0.5) * pixel_width, (row(target_square) + 0.5) * pixel_height, pixel_width / 2 - 1, 0, 2 * Math.PI, true);
     pen.stroke();
+}
+function paintBoard() {
+    let color = "#000000";
+    for (let r = 0; r < global_rows; r++) {
+        for (let c = 0; c < global_cols; c++) {
+            if ((r + c) % 2 == 0)
+                color = "#D2B48C";
+            else
+                color = "#E5D3B3";
+            board_color[r][c] = color;
+        }
+    }
 }
 //# sourceMappingURL=plot.js.map

@@ -8,8 +8,5 @@ function updateLegalHead() {
         if (!myPiece(s) && !invulnerable_pieces.has(pieceAt(s)))
             legal_set.add(s);
     }
-    if (!containsHead(legal_set) || !containsBody(legal_set)) {
-        legal_set = noSquaresYet();
-    }
 }
 //# sourceMappingURL=head.js.map

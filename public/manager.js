@@ -1,20 +1,10 @@
 function plotEverything() {
-    switch (board[target_square.row][target_square.col]) {
-        case "body":
-            updateLegalBody();
-            break;
-        case "armor":
-            updateLegalArmor();
-            break;
-        case "head":
-            updateLegalHead();
-            break;
-    }
+    updateLegal(target_square);
     plotEmptyBoard();
-    if (selected_mode) {
+    if (piece_is_selected) {
+        plotLegalSet();
         plotTargetSquare();
     }
     plotPieces();
-    plotConnectedSet();
 }
 //# sourceMappingURL=manager.js.map

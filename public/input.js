@@ -2,26 +2,24 @@ function getMousePosition(canvas, event) {
     let rect = canvas.getBoundingClientRect();
     let x = event.clientX - rect.left;
     let y = event.clientY - rect.top;
-    new_target_square.col = Math.floor(x / pixel_width);
-    new_target_square.row = Math.floor(y / pixel_height);
-    if (selected_mode) {
-        if ((new_target_square.col == target_square.col) && (new_target_square.row == target_square.row)) {
-            selected_mode = false;
-        }
-        else {
-            if (legal_set.has(new_target_square)) {
-                dest_square = new_target_square;
-                movePiece(target_square, dest_square);
-                selected_mode = false;
-            }
-            else {
-                target_square = new_target_square;
-            }
-        }
+    square_last_clicked_on = asSquare(Math.floor(y / pixel_height), Math.floor(x / pixel_width));
+    if (piece_is_selected && square_last_clicked_on == target_square) {
+        piece_is_selected = false;
     }
-    else {
-        target_square = new_target_square;
-        selected_mode = true;
+    if (piece_is_selected && legal_set.has(square_last_clicked_on)) {
+        piece_is_selected = false;
+        dest_square = square_last_clicked_on;
+        movePiece(target_square, dest_square);
     }
+    if (piece_is_selected && !legal_set.has(square_last_clicked_on)) {
+        piece_is_selected = true;
+        target_square = square_last_clicked_on;
+    }
+    if (!piece_is_selected && square_last_clicked_on != target_square) {
+        piece_is_selected = true;
+        target_square = square_last_clicked_on;
+    }
+    console.log("square_last_clicked_on : " + square_last_clicked_on);
+    console.log("target_square : " + target_square);
 }
 //# sourceMappingURL=input.js.map

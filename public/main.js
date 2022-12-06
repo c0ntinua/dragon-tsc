@@ -1,3 +1,4 @@
+paintBoard();
 seedBoard();
 seedPlayerSets();
 canvas.addEventListener("mousedown", function (e) {

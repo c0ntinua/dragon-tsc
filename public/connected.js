@@ -22,18 +22,4 @@ function connectedPieceAdjacent(check_square) {
             return true;
     return false;
 }
-function containsHead(S) {
-    for (let s of S) {
-        if (board[s.row][s.col] == "head")
-            return true;
-    }
-    return false;
-}
-function containsBody(S) {
-    for (let s of S) {
-        if (board[s.row][s.col] == "body")
-            return true;
-    }
-    return false;
-}
 //# sourceMappingURL=connected.js.map

@@ -1,3 +1,4 @@
+paintBoard();
 seedBoard();
 seedPlayerSets();
 
