@@ -24,4 +24,11 @@ function paintedSquares() {
     }
     return painted_squares;
 }
+function playerAt(s) {
+    if (player_set[0].has(s))
+        return 0;
+    if (player_set[1].has(s))
+        return 1;
+    return 0;
+}
 //# sourceMappingURL=square.js.map

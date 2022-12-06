@@ -1,48 +1,23 @@
-function movePiece(from_col : number, from_row : number , to_col : number, to_row : number ) {
-    let this_piece_type = world.get(from_col, from_row);
-    
-    switch (this_piece_type) {
-        case 0:
-            break;
-        case 1:
-            world.set(to_col, to_row, 1);
-            world.set(from_col, from_row, 0);
-            player.set(from_col, from_row, 0);
-            break;
-        case 2:
-            world.set(to_col, to_row, 2);
-            world.set(from_col, from_row, 1);
-            player.set(from_col, from_row, current_player);
-            break;
-        case 3:
-            world.set(to_col, to_row, 3);
-            world.set(from_col, from_row, 0);
-            player.set(from_col, from_row, 0);
-            break;
-        case 4:
-            world.set(to_col, to_row, 4);
-            world.set(from_col, from_row, 0);
-            player.set(from_col, from_row, 0);
-            break;
-        case 5:
-            world.set(to_col, to_row, 5);
-            world.set(from_col, from_row, 0);
-            player.set(from_col, from_row, 0);
-            break;
-        case 6:
-            world.set(to_col, to_row, 6);
-            world.set(from_col, from_row, 0);
-            player.set(from_col, from_row, 0);
-            break;
-        default:
+function movePiece( from_square : Square , to_square : Square ) {
+    let moving_piece = board[from_square.row][from_square.col];
+    switch (moving_piece) {
+        case "body" :
+        case "head" :
+        case "knight" :
+        case "thetan" :
+            board[from_square.row][from_square.col] = "empty";
+            board[to_square.row][to_square.col] = moving_piece;
+            player_set[current_player].add(to_square);
+            player_set[current_player].delete(from_square);
+        case "armor" :
+            board[from_square.row][from_square.col] = "body";
+            board[to_square.row][to_square.col] = moving_piece;
             break;
     }
-    player.set(to_col, to_row, current_player);
     current_player = other_player(current_player);
 }
 
-function other_player(player : number) {
-    if (player == -1) return 1;
-    if (player ==  1) return -1;
-    console.log('function other_player recieved invalid input');
+function other_player(player : number) : number {
+    if (player == 0) return 1;
+    if (player ==  1) return 0;
 }

@@ -11,7 +11,8 @@
     "files": [
       "armor.ts",
       "body.ts",
-      "cluster.ts",
+      "connected.ts",
+      "board.ts",
       "dragon.ts",
       "global.ts",
       "head.ts",
@@ -26,5 +27,7 @@
       "knight.ts",
       "chess.ts",
       "square.ts",
+      "settings.ts",
+      "types.ts"
     ]
   }

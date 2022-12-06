@@ -2,28 +2,25 @@ function getMousePosition(canvas, event) {
     let rect = canvas.getBoundingClientRect();
     let x = event.clientX - rect.left;
     let y = event.clientY - rect.top;
-    let new_target_col = Math.floor(x / pixel_width);
-    let new_target_row = Math.floor(y / pixel_height);
+    new_target_square.col = Math.floor(x / pixel_width);
+    new_target_square.row = Math.floor(y / pixel_height);
     if (selected_mode) {
-        if ((new_target_col == target_col) && (new_target_row == target_row)) {
+        if ((new_target_square.col == target_square.col) && (new_target_square.row == target_square.row)) {
             selected_mode = false;
         }
         else {
-            if (legal.get(new_target_col, new_target_row) == 1) {
-                dest_col = new_target_col;
-                dest_row = new_target_row;
-                movePiece(target_col, target_row, dest_col, dest_row);
+            if (legal_set.has(new_target_square)) {
+                dest_square = new_target_square;
+                movePiece(target_square, dest_square);
                 selected_mode = false;
             }
             else {
-                target_col = new_target_col;
-                target_row = new_target_row;
+                target_square = new_target_square;
             }
         }
     }
     else {
-        target_col = new_target_col;
-        target_row = new_target_row;
+        target_square = new_target_square;
         selected_mode = true;
     }
 }

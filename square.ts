@@ -7,6 +7,7 @@ function allSquares() : Set<Square> {
     }
     return all;
 }
+
 function noSquaresYet() : Set<Square> {
     let none : Set<Square> = new Set();
     return none;
@@ -21,4 +22,9 @@ function paintedSquares() : Set<SquareWithString> {
         painted_squares.add({row : s.row, col: s.col, string : color});
     }
     return painted_squares;
+}
+function playerAt(s : Square) : number {
+    if (player_set[0].has(s)) return 0;
+    if (player_set[1].has(s)) return 1;
+    return 0;
 }
