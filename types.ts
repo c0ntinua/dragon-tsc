@@ -3,5 +3,4 @@
 //     col: number;
 // };
 type Square = string;
-type SquareWithString = [number,number, string];
 type Board = string[][];

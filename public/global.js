@@ -7,6 +7,7 @@ let legal_set = noSquaresYet();
 let thetan_path_set = noSquaresYet();
 let thetan_one_step_legal_set = noSquaresYet();
 let thetan_two_step_legal_set = noSquaresYet();
+let knight_set = noSquaresYet();
 let player_set = [noSquaresYet(), noSquaresYet()];
 let source_square = "0,0";
 let target_square = "0,0";

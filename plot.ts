@@ -24,46 +24,28 @@ function plotPieces() {
 }
 
 function plotSquareSet(S : Set<Square>, color : string) {
-    pen.strokeStyle = color;
-    pen.lineWidth = 1;
-    for (let s of S) {
-        pen.beginPath();
-        pen.arc(
-            (col(s) + 0.5)*pixel_width,
-            (row(s) + 0.5)*pixel_height,
-            pixel_width/2-1,
-            0,
-            2*Math.PI,
-            true
-            );
-        pen.stroke();   
-    }
+    for (let s of S) plotCircle(row(s),col(s),color);
 }
 
-function plotTargetSquare() {
-    pen.strokeStyle = target_square_color;
-    pen.lineWidth = 3;
+function paintBoard() {
+    for (let s of all_squares) {
+        if ((row(s) + col(s)) % 2 == 0) board_color[row(s)][col(s)] = "#D2B48C";
+        else board_color[row(s)][col(s)] = "#E5D3B3";
+    }
+}
+function plotCircle(row : number, col : number, color : string) {
+    pen.strokeStyle = color;
+    pen.lineWidth = circle_thickness;
     pen.beginPath();
     pen.arc(
-        (col(target_square) + 0.5)*pixel_width,
-        (row(target_square) + 0.5)*pixel_height,
+        (col + 0.5)*pixel_width,
+        (row + 0.5)*pixel_height,
         pixel_width/2-1,
         0,
         2*Math.PI,
         true
-        );
-    pen.stroke();  
-}
-
-function paintBoard() {
-    let color = "#000000";
-    for (let r = 0; r < global_rows; r++) {
-        for (let c = 0; c < global_cols; c++) {
-            if ((r + c) % 2 == 0) color = "#D2B48C";
-            else color = "#E5D3B3";
-            board_color[r][c] = color;
-        }
-    }
+    );
+    pen.stroke();
 }
 
 

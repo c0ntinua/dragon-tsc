@@ -55,12 +55,13 @@ function isEmpty(s) {
     return false;
 }
 function randomPiece() {
-    let code = Math.floor(Math.random() * 5);
+    let code = Math.floor(Math.random() * 6);
     switch (code) {
         case 0: return "body";
         case 1: return "head";
         case 2: return "armor";
         case 3: return "thetan";
+        case 4: return "knight";
         default: return "body";
     }
 }

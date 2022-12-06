@@ -19,3 +19,4 @@ let color : string[] = ["#AA0000","#003300"];
 let current_player  = 0;
 let other_player = 1;
 const delay = 10;
+const circle_thickness = 2;

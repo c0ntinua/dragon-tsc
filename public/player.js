@@ -25,25 +25,4 @@ function myPiece(s) {
         return true;
     return false;
 }
-function updateLegal() {
-    if (!myPiece(target_square)) {
-        legal_set = noSquaresYet();
-        return;
-    }
-    switch (board[row(target_square)][col(target_square)]) {
-        case "body":
-            updateLegalBody();
-            break;
-        case "armor":
-            updateLegalArmor();
-            break;
-        case "head":
-            updateLegalHead();
-            break;
-        case "thetan":
-            updateLegalThetan();
-            break;
-    }
-    return;
-}
 //# sourceMappingURL=player.js.map
