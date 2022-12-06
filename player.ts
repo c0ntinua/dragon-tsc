@@ -1,3 +1,13 @@
+function switch_current_player() {
+    if (current_player == 0) {
+        current_player = 1;
+        other_player = 0;
+    } else {
+        current_player = 0;
+        other_player = 1;
+    }
+}
+
 function seedPlayerSets() {
     for (let s of all_squares) {
         if (board[row(s)][col(s)] != "empty" ) {
@@ -13,8 +23,8 @@ function myPiece(s : Square) : boolean {
     if (player_set[current_player].has(s)) return true;
     return false;
 }
-function updateLegal(s : Square) {
-    if (!myPiece(s)) {
+function updateLegal() {
+    if (!myPiece(target_square)) {
         legal_set = noSquaresYet();
         return;
     }

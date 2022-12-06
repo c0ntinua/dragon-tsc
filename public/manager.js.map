@@ -1,1 +1,1 @@
-{"version":3,"file":"manager.js","sourceRoot":"","sources":["../manager.ts"],"names":[],"mappings":"AAAA,SAAS,cAAc;IACnB,WAAW,CAAC,aAAa,CAAC,CAAC;IAC3B,cAAc,EAAE,CAAC;IACjB,IAAI,iBAAiB,EAAG;QACpB,YAAY,EAAE,CAAC;QAGf,gBAAgB,EAAE,CAAC;KACtB;IACD,UAAU,EAAE,CAAC;AAEjB,CAAC"}
+{"version":3,"file":"manager.js","sourceRoot":"","sources":["../manager.ts"],"names":[],"mappings":"AAAA,SAAS,cAAc;IACnB,WAAW,EAAE,CAAC;IACd,kBAAkB,EAAE,CAAC;IACrB,cAAc,EAAE,CAAC;IAEjB,IAAI,iBAAiB,EAAG;QACpB,gBAAgB,EAAE,CAAC;QACnB,aAAa,CAAC,SAAS,EAAE,eAAe,CAAC,CAAC;KAC7C;IACD,UAAU,EAAE,CAAC;AAEjB,CAAC"}

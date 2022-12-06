@@ -12,6 +12,7 @@ function updateConnectedSet() {
 }
 
 function updateConnectedAdjacentSet() {
+    connected_adjacent_set = noSquaresYet();
     for (let s of all_squares) {
         if (connectedPieceAdjacent(s)) connected_adjacent_set.add(s);
     }

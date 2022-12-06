@@ -1,9 +1,10 @@
 function plotEverything() {
-    updateLegal(target_square);
+    updateLegal();
+    updateConnectedSet();
     plotEmptyBoard();
     if (piece_is_selected) {
-        plotLegalSet();
         plotTargetSquare();
+        plotSquareSet(legal_set, legal_set_color);
     }
     plotPieces();
 }

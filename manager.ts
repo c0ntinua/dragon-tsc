@@ -1,11 +1,11 @@
 function plotEverything() {
-    updateLegal(target_square);
+    updateLegal();
+    updateConnectedSet();
     plotEmptyBoard();
+    //plotSquareSet(connected_adjacent_set, legal_set_color);
     if (piece_is_selected ) {
-        plotLegalSet(); 
-        //plotConnectedSet();
-        
         plotTargetSquare();
+        plotSquareSet(legal_set, legal_set_color);
     }  
     plotPieces(); 
     

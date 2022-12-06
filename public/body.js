@@ -6,5 +6,8 @@ function updateLegalBody() {
         if (isEmpty(s))
             legal_set.add(s);
     }
+    if (!containsHead(connected_set) || !containsBody(connected_set)) {
+        legal_set = noSquaresYet();
+    }
 }
 //# sourceMappingURL=body.js.map

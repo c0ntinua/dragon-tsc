@@ -18,26 +18,17 @@ function plotPieces() {
         }
     }
 }
-function plotLegalSet() {
-    pen.strokeStyle = "#FF0000";
+function plotSquareSet(S, color) {
+    pen.strokeStyle = color;
     pen.lineWidth = 1;
-    for (let s of legal_set) {
+    for (let s of S) {
         pen.beginPath();
         pen.arc((col(s) + 0.5) * pixel_width, (row(s) + 0.5) * pixel_height, pixel_width / 2 - 1, 0, 2 * Math.PI, true);
         pen.stroke();
     }
 }
-function plotConnectedSet() {
-    pen.strokeStyle = "#FF0000";
-    pen.lineWidth = 3;
-    for (let s of connected_set) {
-        pen.beginPath();
-        pen.rect(col(s) * pixel_width, row(s) * pixel_height, pixel_width, pixel_height);
-        pen.stroke();
-    }
-}
 function plotTargetSquare() {
-    pen.strokeStyle = "#00FF00";
+    pen.strokeStyle = target_square_color;
     pen.lineWidth = 3;
     pen.beginPath();
     pen.arc((col(target_square) + 0.5) * pixel_width, (row(target_square) + 0.5) * pixel_height, pixel_width / 2 - 1, 0, 2 * Math.PI, true);

@@ -22,12 +22,12 @@ function plotPieces() {
         }   
     }
 }
-function plotLegalSet() {
-    pen.strokeStyle = "#FF0000";
+
+function plotSquareSet(S : Set<Square>, color : string) {
+    pen.strokeStyle = color;
     pen.lineWidth = 1;
-    for (let s of legal_set) {
+    for (let s of S) {
         pen.beginPath();
-        //pen.rect(col(s)*pixel_width, row(s)*pixel_height, pixel_width, pixel_height);
         pen.arc(
             (col(s) + 0.5)*pixel_width,
             (row(s) + 0.5)*pixel_height,
@@ -36,25 +36,14 @@ function plotLegalSet() {
             2*Math.PI,
             true
             );
-        //ctx.arc(x, y, radius, startAngle, endAngle, counterClockwise);
-        pen.stroke();   
-    }
-}
-function plotConnectedSet() {
-    pen.strokeStyle = "#FF0000";
-    pen.lineWidth = 3;
-    for (let s of connected_set) {
-        pen.beginPath();
-        pen.rect(col(s)*pixel_width, row(s)*pixel_height, pixel_width, pixel_height);
         pen.stroke();   
     }
 }
 
 function plotTargetSquare() {
-    pen.strokeStyle = "#00FF00";
+    pen.strokeStyle = target_square_color;
     pen.lineWidth = 3;
     pen.beginPath();
-    //pen.rect(col(target_square)*pixel_width, row(target_square)*pixel_height, pixel_width, pixel_height);
     pen.arc(
         (col(target_square) + 0.5)*pixel_width,
         (row(target_square) + 0.5)*pixel_height,
