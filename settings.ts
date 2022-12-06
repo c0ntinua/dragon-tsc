@@ -8,7 +8,7 @@ let font_description = "60px Noto Sans Light";
 const valid_pieces = new Set(["empty","body","head","armor","tunnel",
     "pawn","knight","thetan","king","queen","bishop","castle"]);
 const dragon_pieces = new Set(["body","head","armor","tunnel"]);
-const invulnerable_pieces = new Set(["head"]);
+const invulnerable_pieces = new Set(["head","armor"]);
 const density = 0.5;
 const rounds = 10;
 const glyph_row_shift = 46;

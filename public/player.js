@@ -40,6 +40,9 @@ function updateLegal() {
         case "head":
             updateLegalHead();
             break;
+        case "thetan":
+            updateLegalThetan();
+            break;
     }
     return;
 }

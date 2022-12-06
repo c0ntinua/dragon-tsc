@@ -54,11 +54,12 @@ function isEmpty(s : Square) : boolean {
 
 
 function randomPiece() : string {
-    let code = Math.floor(Math.random() * 4);
+    let code = Math.floor(Math.random() * 5);
     switch(code)  {
         case 0 : return "body";
         case 1 : return "head";
         case 2 : return "armor";
+        case 3 : return "thetan";
         default : return "body";
     }
 }

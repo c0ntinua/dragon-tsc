@@ -3,6 +3,8 @@ function movePiece( from_square : Square , to_square : Square ) {
     switch (moving_piece) {
         case "body" :
         case "head" :
+        case "thetan" :
+        case "knight" :
             board[row(from_square)][col(from_square)] = "empty";
             board[row(to_square)][col(to_square)] = moving_piece;
             player_set[current_player].add(to_square);

@@ -32,6 +32,7 @@ function updateLegal() {
         case "body" : updateLegalBody();break;
         case "armor" : updateLegalArmor();break;
         case "head" : updateLegalHead();break;
+        case "thetan" : updateLegalThetan();break;
     }
     return;
 }

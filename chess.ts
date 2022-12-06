@@ -5,8 +5,8 @@ function chessSymbol(player_code : number, piece_code : string) : number {
                 case "body" : return 9817;
                 case "armor" : return 9814;
                 case "head" : return 9812;
-                //case "thetan" : return 9813;
-                //case "knight" : return 9816;
+                case "thetan" : return 9813;
+                case "knight" : return 9816;
             }
             break;
         case 1:
@@ -14,8 +14,8 @@ function chessSymbol(player_code : number, piece_code : string) : number {
                 case "body" : return 9823;
                 case "armor" : return 9820;
                 case "head" : return 9818;
-                //case "thetan" : return 9819;
-                //case "knight" : return 9822;
+                case "thetan" : return 9819;
+                case "knight" : return 9822;
             }
     }
 
